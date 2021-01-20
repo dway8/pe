@@ -1,0 +1,104 @@
+{
+  "appliedMigrations": [
+    {
+      "migrationVersion": 54,
+      "id": "6a9e6404-1540-4b0b-b981-94689ee95d0f"
+    },
+    {
+      "migrationVersion": 55,
+      "id": "f5dcb7c6-9ad8-451f-84c9-2c35bc695b17"
+    },
+    {
+      "migrationVersion": 56,
+      "id": "50bd3c88-0ed7-4469-9bb9-c48e2ef0beff"
+    },
+    {
+      "migrationVersion": 57,
+      "id": "ac7f736b-7b2d-487f-a360-b7a835a530f0"
+    },
+    {
+      "migrationVersion": 58,
+      "id": "daba83a4-cada-44d8-9750-4f143abb2136"
+    },
+    {
+      "migrationVersion": 59,
+      "id": "2deb963a-a951-4632-abfd-54137f90712f"
+    },
+    {
+      "migrationVersion": 60,
+      "id": "05c90c68-1a16-4189-a98f-7b6e4707a4f4"
+    },
+    {
+      "migrationVersion": 61,
+      "id": "adc0df57-9df6-4a81-9cbf-012e5ce21712"
+    },
+    {
+      "migrationVersion": 62,
+      "id": "c15f648b-bf9e-4712-9598-346879f31498"
+    },
+    {
+      "migrationVersion": 63,
+      "id": "3447e545-a96d-4f57-924b-0e1a6ff79fce"
+    },
+    {
+      "migrationVersion": 64,
+      "id": "8164857b-fa11-4c1b-84e5-98dea50fe40b"
+    },
+    {
+      "migrationVersion": 65,
+      "id": "78b5b628-b526-4bb5-b749-04916b790b2f"
+    },
+    {
+      "migrationVersion": 66,
+      "id": "4e8f70b5-da9f-44b9-9d49-1bd4d54e2875"
+    },
+    {
+      "migrationVersion": 67,
+      "id": "16a2851b-6b9b-44ad-b458-8e2ff01b1325"
+    },
+    {
+      "migrationVersion": 68,
+      "id": "b0c3bf80-f5e9-4763-b180-390cd9d11fe6"
+    },
+    {
+      "migrationVersion": 69,
+      "id": "b1940293-bbb8-469e-80d7-d3931ebd6173"
+    },
+    {
+      "migrationVersion": 70,
+      "id": "7a32a357-e023-4bed-be64-2f479d13c961"
+    },
+    {
+      "migrationVersion": 71,
+      "id": "70246b83-0332-4975-9231-bd8a982d1bd4"
+    },
+    {
+      "migrationVersion": 72,
+      "id": "440a21f7-04a7-4a9c-92b5-7a26751a46d3"
+    },
+    {
+      "migrationVersion": 73,
+      "id": "aeee9a16-32ec-4814-8a86-cfc5e9e60c19"
+    },
+    {
+      "migrationVersion": 74,
+      "id": "d97c54d9-f635-4b96-9bf9-f2b40a2e31e8"
+    },
+    {
+      "migrationVersion": 75,
+      "id": "8b776645-bfec-4e0c-b4ac-7c2831b4283d"
+    },
+    {
+      "migrationVersion": 76,
+      "id": "29438092-0d2d-4875-ad5d-8c22f13cc916"
+    },
+    {
+      "migrationVersion": 77,
+      "id": "1a4a0450-85e3-468f-af18-c5cbb5c8e300"
+    },
+    {
+      "migrationVersion": 78,
+      "id": "787f930f-e65e-4b60-9f34-1ad8e1a45bb8"
+    }
+  ]
+}

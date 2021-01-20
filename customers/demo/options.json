@@ -1,0 +1,30 @@
+{
+    "customer": {
+        "customerName": "demo"
+    },
+    "events": {
+        "event1": {
+            "organizerEmail": "cathy@spottt.fr",
+            "tokens": ["accèsPrivé1"],
+            "disableMailing": false,
+            "disablePaymentPolling": true,
+            "paymentContext": "DEMO",
+            "vads": "1234567"
+        },
+        "event2": {
+            "organizerEmail": "philippe@spottt.fr",
+            "disableMailing": false,
+            "disablePaymentPolling": true,
+            "paymentContext": "DEMO",
+            "vads": "1234567"
+        },
+        "event3": {
+            "tokens": ["accèsPrivé1"],
+            "organizerEmail": "philippe@spottt.fr",
+            "disableMailing": false,
+            "disablePaymentPolling": true,
+            "paymentContext": "DEMO",
+            "vads": "1234567"
+        }
+    }
+}

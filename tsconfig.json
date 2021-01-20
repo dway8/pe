@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "strictNullChecks": true,
+        "target": "es5",
+        "baseUrl": "./src",
+        "paths": {
+            "@controllers/*": ["infrastructure/inbound/web/controllers/*"],
+            "@interfaces/*": ["application/interfaces/*"],
+            "@infrastructure/*": ["infrastructure/*"],
+            "@domain/*": ["domain/*"],
+            "@use_cases/*": ["application/use_cases/*"],
+            "@config/*": ["config/*"],
+            "@src/*": ["*"]
+        }
+    },
+    "include": ["./src"]
+}

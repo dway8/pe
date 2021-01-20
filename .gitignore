@@ -1,0 +1,6 @@
+node_modules
+dist
+customers/*appliedMigrations.json
+customers/*db.json
+customers/*dbContacts.json
+customers/*htpasswd
