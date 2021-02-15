@@ -47,28 +47,30 @@ export const GenerateContactsExport = (
                 const orderIdToEventAndStatus = {};
 
                 for (const event of Events) {
-                    (await OrderRepository.getAllOrders(event)).map((order) => {
-                        let status;
-                        if (order.blocked) {
-                            switch (order.status) {
-                                case OrderStatus.DRAFT:
-                                    status = "Requested";
-                                    break;
-                                case OrderStatus.REFUSED:
-                                    status = "Rejected";
-                                    break;
-                                default:
-                                    status = order.status;
+                    (await OrderRepository.getEventOrders(event)).map(
+                        (order) => {
+                            let status;
+                            if (order.blocked) {
+                                switch (order.status) {
+                                    case OrderStatus.DRAFT:
+                                        status = "Requested";
+                                        break;
+                                    case OrderStatus.REFUSED:
+                                        status = "Rejected";
+                                        break;
+                                    default:
+                                        status = order.status;
+                                }
+                            } else {
+                                status = order.status;
                             }
-                        } else {
-                            status = order.status;
-                        }
 
-                        orderIdToEventAndStatus[order.id] = {
-                            event,
-                            status,
-                        };
-                    });
+                            orderIdToEventAndStatus[order.id] = {
+                                event,
+                                status,
+                            };
+                        }
+                    );
                 }
                 exportInfo = ContactService.getFormattedOrgs({
                     typologies,

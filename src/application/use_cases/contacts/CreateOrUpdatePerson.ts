@@ -40,7 +40,7 @@ export const CreateOrUpdatePerson = (
                     );
 
                     if (result.success && result.data.newOrder) {
-                        const patch = PatchService.computePatchForOrder(
+                        const patch = await PatchService.computePatchForOrder(
                             event,
                             order,
                             result.data.newOrder,

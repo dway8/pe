@@ -13,6 +13,7 @@ export type Order = {
     mailTokens?: { exhibitor?: string };
     status: OrderStatus;
     blocked?: boolean;
+    lastUpdate: number;
 };
 
 export enum OrderStatus {

@@ -6,7 +6,7 @@ import { Patch } from "@domain/entities/Patch";
 import { Wallet } from "@domain/entities/Wallet";
 
 export interface IOrderRepository {
-    getAllOrders(event: string): Promise<Order[]>;
+    getEventOrders(event: string): Promise<Order[]>;
 
     getOrder(event: string, id: string): Promise<Order>;
 

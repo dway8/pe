@@ -43,7 +43,7 @@ export class LowDbOrderRepository implements IOrderRepository {
         return this.dbs[event].get("installments");
     }
 
-    async getAllOrders(event: string): Promise<Order[]> {
+    async getEventOrders(event: string): Promise<Order[]> {
         return this.orders(event).value();
     }
 

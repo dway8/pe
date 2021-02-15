@@ -5,4 +5,5 @@ export enum Action {
     ADMIN_SET_PUBLISHED = "AdminSetPublished",
     INITIAL_FORM_SUBMISSION = "InitialFormSubmission",
     ADMIN_VALIDATED = "AdminValidated",
+    ADMIN_SET_FAVORITE = "AdminSetFavorite",
 }
