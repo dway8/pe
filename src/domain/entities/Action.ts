@@ -6,4 +6,10 @@ export enum Action {
     INITIAL_FORM_SUBMISSION = "InitialFormSubmission",
     ADMIN_VALIDATED = "AdminValidated",
     ADMIN_SET_FAVORITE = "AdminSetFavorite",
+    ADMIN_ARCHIVED = "AdminArchived",
+    ADMIN_NOTIFIED = "AdminNotified",
+    ADMIN_AUTHORIZED_ACCESS = "AdminAuthorizedAccess",
+    ADMIN_REFUSED = "AdminRefused",
+    ADMIN_DELETED = "AdminDeleted",
+    ADMIN_CANCELLED = "AdminCancelled",
 }

@@ -11,8 +11,8 @@ const contactsRouter = (dependencies: ProjectDependencies) => {
 
     router.get("/all", controller.getAllOrders);
     router.post("/favorite", controller.updateOrderFavoriteLevel);
-    // router.post("/publish", controller.updateOrderPublicationStatus);
-    // router.post("/changeStatus", controller.updateOrderStatus);
+    router.post("/publish", controller.updateOrderPublicationStatus);
+    router.post("/changeStatus", controller.updateOrderStatus);
 
     // router.post("/export/:format", controller.generateOrdersExport);
     // router.get("/export/:uid", controller.downloadOrdersExport);

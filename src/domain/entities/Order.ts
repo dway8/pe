@@ -14,6 +14,8 @@ export type Order = {
     status: OrderStatus;
     blocked?: boolean;
     lastUpdate: number;
+    published?: boolean;
+    notified?: boolean;
 };
 
 export enum OrderStatus {

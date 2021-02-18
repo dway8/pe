@@ -1,10 +1,11 @@
-import { Order } from "@domain/entities/Order";
+import { Order, OrderStatus } from "@domain/entities/Order";
 import { Patch } from "@domain/entities/Patch";
 import { ILoggerService } from "@interfaces/ILoggerService";
 import { IOrderRepository } from "@interfaces/persistence/IOrderRepository";
 import { ISSEService } from "@interfaces/ISSEService";
 import { OrderSerializerService } from "./OrderSerializerService";
 import { PatchService } from "./PatchService";
+import { Action } from "@domain/entities/Action";
 
 type Result = ResultSuccess | ResultError;
 type ResultSuccess = { success: true; data: Record<string, any> };
@@ -69,5 +70,60 @@ export class OrderService {
             'Sending "updatedOrder" tag through admin sse'
         );
         this.SSEService.send(obj, "updatedOrder");
+    }
+
+    async updateOrderOnStatusChange(
+        event: string,
+        order: Order,
+        action: Action,
+        status: OrderStatus,
+        comment: string | undefined,
+        actionComment: string | undefined,
+        cancellationFeeHT: number | undefined
+    ): Promise<Order> {
+        const now = new Date().getTime();
+        let lastMessage = actionComment || null;
+        if (
+            status === OrderStatus.DELETED ||
+            action === Action.ADMIN_ARCHIVED
+        ) {
+            lastMessage = null;
+        }
+        const notified = action === Action.ADMIN_NOTIFIED;
+        const change: Record<string, any> = {
+            status,
+            comment,
+            lastUpdate: now,
+            lastMessage,
+            notified: order.notified || notified,
+            blocked:
+                order.blocked && !(action === Action.ADMIN_AUTHORIZED_ACCESS),
+        };
+
+        if (
+            action === Action.ADMIN_REFUSED ||
+            action === Action.ADMIN_DELETED ||
+            action === Action.ADMIN_CANCELLED
+        ) {
+            change.spotIds = [];
+            change.assignmentShared = false;
+            change.assignmentConfirmed = false;
+        }
+
+        if (action === Action.ADMIN_CANCELLED) {
+            change.cancellationFeeHT = cancellationFeeHT || 0;
+        }
+
+        if (action === Action.ADMIN_ARCHIVED) {
+            change.archived = true;
+        }
+
+        const newOrder = await this.OrderRepository.updateOrder(
+            event,
+            order.id,
+            { ...order, ...change }
+        );
+
+        return newOrder;
     }
 }

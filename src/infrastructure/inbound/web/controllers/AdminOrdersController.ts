@@ -4,6 +4,7 @@ import { PatchService } from "@domain/services/PatchService";
 import { IOrderRepository } from "@interfaces/persistence/IOrderRepository";
 import { GetAllOrders } from "@use_cases/orders/GetAllOrders";
 import { UpdateOrderFavoriteLevel } from "@use_cases/orders/UpdateOrderFavoriteLevel";
+import { UpdateOrderPublicationStatus } from "@use_cases/orders/UpdateOrderPublicationStatus";
 import { getUsernameFromReq } from "./utils";
 
 export class AdminOrdersController {
@@ -51,6 +52,44 @@ export class AdminOrdersController {
             favorite,
             username
         ).then(
+            (response) => {
+                res.json({ success: true, data: response });
+            },
+            (err) => {
+                next(err);
+            }
+        );
+    };
+
+    updateOrderPublicationStatus = (req, res, next) => {
+        const UpdateOrderPublicationStatusCommand = UpdateOrderPublicationStatus(
+            this.OrderRepository,
+            this.OrderSerializerService
+        );
+
+        const { event } = req.params;
+        const { id, published } = req.body;
+
+        UpdateOrderPublicationStatusCommand.Execute(event, id, published).then(
+            (response) => {
+                res.json({ success: true, data: response });
+            },
+            (err) => {
+                next(err);
+            }
+        );
+    };
+
+    updateOrderStatus = (req, res, next) => {
+        const UpdateOrderStatusCommand = UpdateOrderPublicationStatus(
+            this.OrderRepository,
+            this.OrderSerializerService
+        );
+
+        const { event } = req.params;
+        const { id, published } = req.body;
+
+        UpdateOrderStatusCommand.Execute(event, id, published).then(
             (response) => {
                 res.json({ success: true, data: response });
             },
